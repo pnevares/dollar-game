@@ -38,7 +38,7 @@ const nodes = [
     y: 2,
     size: 2,
     color: '#000'
-  }
+  },
 ];
 
 export default nodes;

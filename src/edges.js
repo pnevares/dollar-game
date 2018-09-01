@@ -23,7 +23,7 @@ const edges = [
     id: 'e4',
     source: 'n3',
     target: 'n4'
-  }
+  },
 ];
 
 export default edges;

@@ -4,8 +4,6 @@ import edges from './edges';
 
 var s = new Sigma({
   container: 'root',
-  // doubleClickEnabled: false,
-  // mouseWheelEnabled: false,
 });
 
 nodes.forEach(node => {
@@ -17,24 +15,25 @@ edges.forEach(edge => {
 });
 
 s.bind('clickNode', (data) => {
-  console.log(data);
-
   const {
-    captor: { shiftKey },
-    node: { id }
+    captor: { shiftKey: take },
+    node: { id },
   } = data.data;
 
-  if (shiftKey) {
-    console.log(`shift-clicked ${id}`);
-  } else {
-    console.log(`clicked ${id}`);
-  }
+  distribute(id, take);
 });
 
 s.refresh();
 
-// console.log(s.graph.nodes('n4'));
-// s.graph.nodes('n4').label = "2";
-// console.log(s.graph.nodes('n4'));
+function distribute(id, take) {
+  let count = Number.parseInt(s.graph.nodes(id).label, 10);
 
-// s.refresh();
+  if (take) {
+    count += 1;
+  } else {
+    count -= 1;
+  }
+
+  s.graph.nodes(id).label = count.toString();
+  s.refresh();
+}
