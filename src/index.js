@@ -1,6 +1,10 @@
 import Sigma from 'sigma';
 
-var s = new Sigma('root');
+var s = new Sigma({
+  container: 'root',
+  // doubleClickEnabled: false,
+  // mouseWheelEnabled: false,
+});
 
 s.graph.addNode({
   id: 'n0',
@@ -60,12 +64,24 @@ s.graph.addNode({
 });
 
 s.bind('clickNode', (data) => {
-  const { shiftKey } = data.data.captor;
+  console.log(data);
+
+  const {
+    captor: { shiftKey },
+    node: { id }
+  } = data.data;
+
   if (shiftKey) {
-    console.log(`shift-clicked ${data.data.node.id}`);
+    console.log(`shift-clicked ${id}`);
   } else {
-    console.log(`clicked ${data.data.node.id}`);
+    console.log(`clicked ${id}`);
   }
 });
 
 s.refresh();
+
+// console.log(s.graph.nodes('n4'));
+// s.graph.nodes('n4').label = "2";
+// console.log(s.graph.nodes('n4'));
+
+// s.refresh();
