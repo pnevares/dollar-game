@@ -1,0 +1,23 @@
+{
+  "name": "dollar-game",
+  "version": "1.0.0",
+  "description": "Select a node and whether to GIVE or TAKE $1 to/from each connected node. The game ends when every node is out of debt.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pnevares/dollar-game.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pnevares/dollar-game/issues"
+  },
+  "homepage": "https://github.com/pnevares/dollar-game#readme",
+  "dependencies": {
+    "sigma": "^1.2.1"
+  }
+}
