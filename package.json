@@ -1,10 +1,10 @@
 {
   "name": "dollar-game",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Select a node and whether to GIVE or TAKE $1 to/from each connected node. The game ends when every node is out of debt.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack-dev-server"
   },
   "repository": {
     "type": "git",
@@ -19,5 +19,15 @@
   "homepage": "https://github.com/pnevares/dollar-game#readme",
   "dependencies": {
     "sigma": "^1.2.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "babel-loader": "^8.0.0",
+    "babel-preset-env": "^1.7.0",
+    "html-webpack-plugin": "^3.2.0",
+    "imports-loader": "^0.8.0",
+    "webpack": "^4.17.1",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.7"
   }
 }
