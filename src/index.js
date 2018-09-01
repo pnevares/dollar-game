@@ -59,4 +59,13 @@ s.graph.addNode({
   target: 'n4'
 });
 
+s.bind('clickNode', (data) => {
+  const { shiftKey } = data.data.captor;
+  if (shiftKey) {
+    console.log(`shift-clicked ${data.data.node.id}`);
+  } else {
+    console.log(`clicked ${data.data.node.id}`);
+  }
+});
+
 s.refresh();
