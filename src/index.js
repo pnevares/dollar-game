@@ -6,6 +6,11 @@ var s = new Sigma({
   container: 'root',
 });
 
+s.settings({
+  doubleClickEnabled: false,
+  mouseWheelEnabled: false,
+});
+
 s.graph.read({
   nodes,
   edges,
