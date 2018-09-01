@@ -6,12 +6,9 @@ var s = new Sigma({
   container: 'root',
 });
 
-nodes.forEach(node => {
-  s.graph.addNode(node);
-});
-
-edges.forEach(edge => {
-  s.graph.addEdge(edge);
+s.graph.read({
+  nodes,
+  edges,
 });
 
 s.bind('clickNode', (data) => {
