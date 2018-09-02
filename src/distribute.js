@@ -1,5 +1,3 @@
-/* eslint-disable no-param-reassign */
-
 export default function distribute(s, id, take) {
   const neighbors = s.graph.getAllNeighbors(id);
   let value = Number.parseInt(s.graph.nodes(id).label, 10);
@@ -15,8 +13,8 @@ export default function distribute(s, id, take) {
       value -= 1;
     }
 
-    s.graph.nodes(neighbor).label = neighborsValue.toString();
+    s.graph.updateNode(neighbor, { label: neighborsValue.toString() });
   });
 
-  s.graph.nodes(id).label = value.toString();
+  s.graph.updateNode(id, { label: value.toString() });
 }

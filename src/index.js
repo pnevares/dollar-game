@@ -22,7 +22,7 @@ s.bind('overNode', (data) => {
 
   s.graph.edges().forEach((edge) => {
     if (edge.source === overNodeId || edge.target === overNodeId) {
-      s.graph.edges(edge.id).color = '#f0f';
+      s.graph.updateEdge(edge.id, { color: '#f0f' });
     }
   });
 
@@ -31,7 +31,7 @@ s.bind('overNode', (data) => {
 
 s.bind('outNode', () => {
   s.graph.edges().forEach((edge) => {
-    delete s.graph.edges(edge.id).color;
+    s.graph.updateEdge(edge.id, { color: undefined });
   });
 
   s.refresh();
