@@ -1,8 +1,10 @@
+/* eslint-disable no-param-reassign */
+
 export default function distribute(s, id, take) {
   const neighbors = s.graph.getAllNeighbors(id);
   let value = Number.parseInt(s.graph.nodes(id).label, 10);
 
-  neighbors.forEach(neighbor => {
+  neighbors.forEach((neighbor) => {
     let neighborsValue = Number.parseInt(s.graph.nodes(neighbor).label, 10);
 
     if (take) {

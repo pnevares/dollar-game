@@ -5,7 +5,7 @@ const nodes = [
     x: 1,
     y: 0,
     size: 2,
-    color: '#000'
+    color: '#000',
   },
   {
     id: 'n1',
@@ -13,7 +13,7 @@ const nodes = [
     x: 0,
     y: 1,
     size: 2,
-    color: '#000'
+    color: '#000',
   },
   {
     id: 'n2',
@@ -21,7 +21,7 @@ const nodes = [
     x: 2,
     y: 1,
     size: 2,
-    color: '#000'
+    color: '#000',
   },
   {
     id: 'n3',
@@ -29,7 +29,7 @@ const nodes = [
     x: 0,
     y: 2,
     size: 2,
-    color: '#000'
+    color: '#000',
   },
   {
     id: 'n4',
@@ -37,7 +37,7 @@ const nodes = [
     x: 1,
     y: 2,
     size: 2,
-    color: '#000'
+    color: '#000',
   },
 ];
 

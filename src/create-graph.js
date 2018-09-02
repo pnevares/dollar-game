@@ -3,7 +3,7 @@ import nodes from './nodes';
 import edges from './edges';
 
 // custom method(s)
-Sigma.classes.graph.addMethod('getAllNeighbors', function(id) {
+Sigma.classes.graph.addMethod('getAllNeighbors', function getAllNeighbors(id) {
   return Object.keys(this.allNeighborsIndex[id]);
 });
 
@@ -11,7 +11,7 @@ export default function createGraph() {
   const s = new Sigma({
     container: 'root',
   });
-  
+
   s.settings({
     doubleClickEnabled: false,
     mouseWheelEnabled: false,
@@ -19,7 +19,7 @@ export default function createGraph() {
     labelColor: 'node',
     edgeColor: 'default',
   });
-  
+
   s.graph.read({
     nodes,
     edges,
