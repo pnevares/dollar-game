@@ -19,5 +19,4 @@ export default function distribute(s, id, take) {
   });
 
   s.graph.nodes(id).label = value.toString();
-  s.refresh();
 }

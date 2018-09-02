@@ -1,5 +1,6 @@
 import createGraph from './create-graph';
 import distribute from './distribute';
+import setColors from './set-colors';
 
 const s = createGraph();
 
@@ -10,15 +11,10 @@ s.bind('clickNode', (data) => {
   } = data.data;
 
   distribute(s, id, take);
+  setColors(s);
+  s.refresh();
 });
 
-s.graph.nodes().forEach((node) => {
-  const value = Number.parseInt(node.label, 10);
-  if (value >= 0) {
-    s.graph.nodes(node.id).color = '#0f0'; // green
-  } else {
-    s.graph.nodes(node.id).color = '#f00'; // red
-  }
-});
+setColors(s);
 
 s.refresh();
