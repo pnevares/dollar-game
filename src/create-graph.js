@@ -1,6 +1,5 @@
 import Sigma from 'sigma';
-import nodes from './nodes';
-import edges from './edges';
+import puzzles from './puzzles';
 
 // custom method(s)
 Sigma.classes.graph.addMethod('getAllNeighbors', function getAllNeighbors(id) {
@@ -38,10 +37,7 @@ export default function createGraph() {
     defaultEdgeColor: '#ccc',
   });
 
-  s.graph.read({
-    nodes,
-    edges,
-  });
+  s.graph.read(puzzles[1]);
 
   return s;
 }
