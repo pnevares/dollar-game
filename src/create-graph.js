@@ -15,11 +15,15 @@ export default function createGraph() {
   s.settings({
     doubleClickEnabled: false,
     mouseWheelEnabled: false,
-    defaultLabelSize: 24,
-    labelColor: 'node',
-    edgeColor: 'default',
+
     sideMargin: 0.1,
     maxEdgeSize: 4,
+    maxNodeSize: 10,
+
+    defaultLabelSize: 30,
+    labelColor: 'node',
+    edgeColor: 'default',
+    defaultEdgeColor: '#ccc',
   });
 
   s.graph.read({
