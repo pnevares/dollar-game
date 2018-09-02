@@ -18,6 +18,8 @@ export default function createGraph() {
     defaultLabelSize: 24,
     labelColor: 'node',
     edgeColor: 'default',
+    sideMargin: 0.1,
+    maxEdgeSize: 4,
   });
 
   s.graph.read({
