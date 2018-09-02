@@ -27,7 +27,7 @@ export default function createGraph() {
     doubleClickEnabled: false,
     mouseWheelEnabled: false,
 
-    sideMargin: 0.1,
+    sideMargin: 0.3,
     maxEdgeSize: 4,
     maxNodeSize: 10,
 
@@ -37,7 +37,7 @@ export default function createGraph() {
     defaultEdgeColor: '#ccc',
   });
 
-  s.graph.read(puzzles[1]);
+  s.graph.read(puzzles[2]);
 
   return s;
 }
