@@ -1,5 +1,5 @@
 import distribute from './distribute';
-import setColors from './set-colors';
+import updateGraph from './update-graph';
 
 export default function bindHandlers(s) {
   s.bind('clickNode', (data) => {
@@ -9,7 +9,8 @@ export default function bindHandlers(s) {
     } = data.data;
 
     distribute(s, id, take);
-    setColors(s);
+
+    updateGraph(s);
     s.refresh();
   });
 

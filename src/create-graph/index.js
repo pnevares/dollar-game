@@ -1,6 +1,6 @@
 import Sigma from 'sigma';
 import bindHandlers from './bind-handlers';
-import setColors from './set-colors';
+import updateGraph from './update-graph';
 import { CONTAINER } from '../constants';
 
 // custom method(s)
@@ -47,7 +47,7 @@ export default function createGraph(puzzle) {
   s.graph.read(puzzle);
 
   bindHandlers(s);
-  setColors(s);
+  updateGraph(s);
   s.refresh();
 
   return s;
