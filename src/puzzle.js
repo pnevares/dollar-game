@@ -5,16 +5,25 @@ import puzzles from './puzzles';
 
 export default class Puzzle extends React.Component {
   componentDidMount() {
-    const { puzzleIndex } = this.props;
-    this.graph = createGraph(puzzles[puzzleIndex]);
+    this.createGraph();
   }
 
   componentDidUpdate(prevProps) {
     const { puzzleIndex } = this.props;
     if (puzzleIndex !== prevProps.puzzleIndex) {
       this.graph.graph.destroy();
-      this.graph = createGraph(puzzles[puzzleIndex]);
+      this.createGraph();
     }
+  }
+
+  createGraph() {
+    const { puzzleIndex } = this.props;
+
+    const puzzle = typeof puzzles[puzzleIndex] === 'function'
+      ? puzzles[puzzleIndex]()
+      : puzzles[puzzleIndex];
+
+    this.graph = createGraph(puzzle);
   }
 
   render() {

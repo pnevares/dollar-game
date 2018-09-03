@@ -6,7 +6,9 @@ import puzzles from './puzzles';
 import calculateStats from './calculate-stats';
 
 const Stats = ({ puzzleIndex }) => {
-  const puzzle = puzzles[puzzleIndex];
+  const puzzle = typeof puzzles[puzzleIndex] === 'function'
+    ? puzzles[puzzleIndex]()
+    : puzzles[puzzleIndex];
 
   const { dollars, genus } = calculateStats(puzzle);
 
