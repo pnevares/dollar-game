@@ -1,27 +1,307 @@
-export default function puzzle4() {
-  let nodeCount = 20;
-  // let edgeCount = 30;
-  const nodes = [];
-  const edges = [];
+// From https://youtu.be/U33dsEcKgeQ?t=3m50s
+// Based on genus and dollars...impossible?
 
-  while (nodeCount > 0) {
-    const value = Math.floor(Math.random() * 8) - 4;
-    const x = Math.floor(Math.random() * 150);
-    const y = Math.floor(Math.random() * 100);
+const nodes = [
+  {
+    id: 'n0',
+    label: '8',
+    x: 0,
+    y: 0,
+    size: 1,
+  },
+  {
+    id: 'n1',
+    label: '0',
+    x: 2,
+    y: 0,
+    size: 1,
+  },
+  {
+    id: 'n2',
+    label: '-1',
+    x: 4,
+    y: 0,
+    size: 1,
+  },
+  {
+    id: 'n3',
+    label: '-2',
+    x: 5,
+    y: 0,
+    size: 1,
+  },
+  {
+    id: 'n4',
+    label: '0',
+    x: 6,
+    y: 0,
+    size: 1,
+  },
+  {
+    id: 'n5',
+    label: '4',
+    x: 0,
+    y: 1,
+    size: 1,
+  },
+  {
+    id: 'n6',
+    label: '-2',
+    x: 1,
+    y: 1,
+    size: 1,
+  },
+  {
+    id: 'n7',
+    label: '-2',
+    x: 5,
+    y: 2,
+    size: 1,
+  },
+  {
+    id: 'n8',
+    label: '-2',
+    x: 0,
+    y: 2,
+    size: 1,
+  },
+  {
+    id: 'n9',
+    label: '-2',
+    x: 6,
+    y: 2,
+    size: 1,
+  },
+  {
+    id: 'n10',
+    label: '1',
+    x: 1,
+    y: 3,
+    size: 1,
+  },
+  {
+    id: 'n11',
+    label: '2',
+    x: 2,
+    y: 3,
+    size: 1,
+  },
+  {
+    id: 'n12',
+    label: '1',
+    x: 5,
+    y: 3,
+    size: 1,
+  },
+  {
+    id: 'n13',
+    label: '4',
+    x: 0,
+    y: 4,
+    size: 1,
+  },
+  {
+    id: 'n14',
+    label: '-3',
+    x: 1,
+    y: 4,
+    size: 1,
+  },
+  {
+    id: 'n15',
+    label: '2',
+    x: 3,
+    y: 4,
+    size: 1,
+  },
+  {
+    id: 'n16',
+    label: '1',
+    x: 4,
+    y: 4,
+    size: 1,
+  },
+  {
+    id: 'n17',
+    label: '-5',
+    x: 5,
+    y: 4,
+    size: 1,
+  },
+];
 
-    nodes.push({
-      id: `n${nodes.length}`,
-      label: value.toString(),
-      x,
-      y,
-      size: 1,
-    });
+const edges = [
+  {
+    id: 'e0',
+    source: 'n0',
+    target: 'n1',
+    size: 1,
+  },
+  {
+    id: 'e1',
+    source: 'n6',
+    target: 'n1',
+    size: 1,
+  },
+  {
+    id: 'e2',
+    source: 'n7',
+    target: 'n1',
+    size: 1,
+  },
+  {
+    id: 'e3',
+    source: 'n11',
+    target: 'n1',
+    size: 1,
+  },
+  {
+    id: 'e4',
+    source: 'n3',
+    target: 'n2',
+    size: 1,
+  },
+  {
+    id: 'e5',
+    source: 'n7',
+    target: 'n2',
+    size: 1,
+  },
+  {
+    id: 'e6',
+    source: 'n11',
+    target: 'n2',
+    size: 1,
+  },
+  {
+    id: 'e7',
+    source: 'n15',
+    target: 'n2',
+    size: 1,
+  },
+  {
+    id: 'e8',
+    source: 'n16',
+    target: 'n2',
+    size: 1,
+  },
+  {
+    id: 'e9',
+    source: 'n9',
+    target: 'n4',
+    size: 1,
+  },
+  {
+    id: 'e10',
+    source: 'n12',
+    target: 'n4',
+    size: 1,
+  },
+  {
+    id: 'e11',
+    source: 'n5',
+    target: 'n8',
+    size: 1,
+  },
+  {
+    id: 'e12',
+    source: 'n6',
+    target: 'n8',
+    size: 1,
+  },
+  {
+    id: 'e13',
+    source: 'n10',
+    target: 'n8',
+    size: 1,
+  },
+  {
+    id: 'e14',
+    source: 'n13',
+    target: 'n8',
+    size: 1,
+  },
+  {
+    id: 'e15',
+    source: 'n5',
+    target: 'n6',
+    size: 1,
+  },
+  {
+    id: 'e16',
+    source: 'n10',
+    target: 'n13',
+    size: 1,
+  },
+  {
+    id: 'e17',
+    source: 'n11',
+    target: 'n14',
+    size: 1,
+  },
+  {
+    id: 'e18',
+    source: 'n14',
+    target: 'n15',
+    size: 1,
+  },
+  {
+    id: 'e19',
+    source: 'n15',
+    target: 'n16',
+    size: 1,
+  },
+  {
+    id: 'e20',
+    source: 'n16',
+    target: 'n17',
+    size: 1,
+  },
+  {
+    id: 'e21',
+    source: 'n12',
+    target: 'n17',
+    size: 1,
+  },
+  {
+    id: 'e22',
+    source: 'n12',
+    target: 'n9',
+    size: 1,
+  },
+  {
+    id: 'e23',
+    source: 'n7',
+    target: 'n9',
+    size: 1,
+  },
+  {
+    id: 'e24',
+    source: 'n6',
+    target: 'n7',
+    size: 1,
+  },
+  {
+    id: 'e25',
+    source: 'n6',
+    target: 'n11',
+    size: 1,
+  },
+  {
+    id: 'e26',
+    source: 'n16',
+    target: 'n12',
+    size: 1,
+  },
+  {
+    id: 'e27',
+    source: 'n15',
+    target: 'n7',
+    size: 1,
+  },
+];
 
-    nodeCount -= 1;
-  }
-
-  return {
-    nodes,
-    edges,
-  };
-}
+export default {
+  nodes,
+  edges,
+};
