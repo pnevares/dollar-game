@@ -36,7 +36,7 @@ const nodes = [
   },
   {
     id: 'n5',
-    label: '2',
+    label: '1',
     x: 4,
     y: 4,
     size: 1,

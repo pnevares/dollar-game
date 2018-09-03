@@ -8,7 +8,7 @@ const nodes = [
   },
   {
     id: 'n1',
-    label: '4',
+    label: '1',
     x: 2,
     y: 0,
     size: 1,
