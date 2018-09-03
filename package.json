@@ -1,6 +1,6 @@
 {
   "name": "dollar-game",
-  "version": "0.0.1",
+  "version": "0.5.0",
   "description": "Distribute the cash until everyone is out of debt.",
   "main": "index.js",
   "scripts": {
@@ -12,6 +12,7 @@
     "url": "git+https://github.com/pnevares/dollar-game.git"
   },
   "keywords": [
+    "react",
     "sigma",
     "game",
     "dollar game"
@@ -21,7 +22,7 @@
   "bugs": {
     "url": "https://github.com/pnevares/dollar-game/issues"
   },
-  "homepage": "https://github.com/pnevares/dollar-game#readme",
+  "homepage": "https://github.com/pnevares/dollar-game",
   "dependencies": {
     "prop-types": "^15.6.2",
     "react": "^16.4.2",
