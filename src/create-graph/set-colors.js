@@ -1,3 +1,9 @@
+import {
+  GREEN,
+  HOORAY,
+  RED,
+} from '../constants';
+
 export default function setColors(s) {
   let reds = 0;
 
@@ -5,15 +11,16 @@ export default function setColors(s) {
     const value = Number.parseInt(node.label, 10);
 
     if (value >= 0) {
-      s.graph.updateNode(node.id, { color: '#0f0' }); // green
+      s.graph.updateNode(node.id, { color: GREEN });
     } else {
-      s.graph.updateNode(node.id, { color: '#f00' }); // red
+      s.graph.updateNode(node.id, { color: RED });
       reds += 1;
     }
   });
 
   if (reds === 0) {
-    const hooray = document.createTextNode('🎉🎉🎉🎉🎉🎉');
-    document.getElementById('container').appendChild(hooray);
+    document.getElementById('container').appendChild(
+      document.createTextNode(HOORAY),
+    );
   }
 }

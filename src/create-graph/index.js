@@ -1,6 +1,7 @@
 import Sigma from 'sigma';
 import bindHandlers from './bind-handlers';
 import setColors from './set-colors';
+import { CONTAINER } from '../constants';
 
 // custom method(s)
 Sigma.classes.graph.addMethod('getAllNeighbors', function getAllNeighbors(id) {
@@ -19,14 +20,14 @@ Sigma.classes.graph.addMethod('updateEdge', function updateEdge(id, patch) {
   return true;
 });
 Sigma.classes.graph.addMethod('destroy', function destroy() {
-  document.getElementById('container').innerHTML = '';
+  document.getElementById(CONTAINER).innerHTML = '';
   this.kill();
   return true;
 });
 
 export default function createGraph(puzzle) {
   const s = new Sigma({
-    container: 'container',
+    container: CONTAINER,
   });
 
   s.settings({
