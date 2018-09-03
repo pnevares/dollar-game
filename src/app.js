@@ -1,5 +1,7 @@
 import React from 'react';
+import Buttons from './buttons';
 import Puzzle from './puzzle';
+import Stats from './stats';
 
 export default class App extends React.Component {
   constructor() {
@@ -23,12 +25,8 @@ export default class App extends React.Component {
     return (
       <>
         <Puzzle puzzleIndex={puzzleIndex} />
-        {[0, 1, 2].map(i => (
-          <button key={i} type="button" onClick={() => this.changePuzzle(i)}>
-            Puzzle
-            {i}
-          </button>
-        ))}
+        <Buttons clickHandler={this.changePuzzle} />
+        <Stats puzzleIndex={puzzleIndex} />
       </>
     );
   }
