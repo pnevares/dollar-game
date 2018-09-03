@@ -21,7 +21,7 @@ Sigma.classes.graph.addMethod('updateEdge', function updateEdge(id, patch) {
 
 export default function createGraph(puzzle) {
   const s = new Sigma({
-    container: 'root',
+    container: 'container',
   });
 
   s.settings({

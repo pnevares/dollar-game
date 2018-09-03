@@ -1,4 +1,8 @@
-import createGraph from './create-graph';
-import puzzles from './puzzles';
+import React from 'react';
+import ReactDom from 'react-dom';
+import App from './app';
 
-createGraph(puzzles[0]);
+ReactDom.render(
+  <App />,
+  document.getElementById('root'),
+);
