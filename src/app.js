@@ -23,9 +23,12 @@ export default class App extends React.Component {
     return (
       <>
         <Puzzle puzzleIndex={puzzleIndex} />
-        <button type="button" onClick={() => this.changePuzzle(0)}>Puzzle 1</button>
-        <button type="button" onClick={() => this.changePuzzle(1)}>Puzzle 2</button>
-        <button type="button" onClick={() => this.changePuzzle(2)}>Puzzle 3</button>
+        {[0, 1, 2].map(i => (
+          <button key={i} type="button" onClick={() => this.changePuzzle(i)}>
+            Puzzle
+            {i}
+          </button>
+        ))}
       </>
     );
   }

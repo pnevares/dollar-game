@@ -18,6 +18,11 @@ Sigma.classes.graph.addMethod('updateEdge', function updateEdge(id, patch) {
   });
   return true;
 });
+Sigma.classes.graph.addMethod('destroy', function destroy() {
+  document.getElementById('container').innerHTML = '';
+  this.kill();
+  return true;
+});
 
 export default function createGraph(puzzle) {
   const s = new Sigma({

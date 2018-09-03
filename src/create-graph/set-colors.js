@@ -13,6 +13,7 @@ export default function setColors(s) {
   });
 
   if (reds === 0) {
-    console.log('YOU WIN'); // eslint-disable-line no-console
+    const hooray = document.createTextNode('🎉🎉🎉🎉🎉🎉');
+    document.getElementById('container').appendChild(hooray);
   }
 }

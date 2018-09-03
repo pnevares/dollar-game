@@ -12,7 +12,7 @@ export default class Puzzle extends React.Component {
   componentDidUpdate(prevProps) {
     const { puzzleIndex } = this.props;
     if (puzzleIndex !== prevProps.puzzleIndex) {
-      this.graph.kill();
+      this.graph.graph.destroy();
       this.graph = createGraph(puzzles[puzzleIndex]);
     }
   }
