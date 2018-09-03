@@ -1,6 +1,4 @@
 import React from 'react';
-import createGraph from './create-graph';
-import puzzles from './puzzles';
 import Puzzle from './puzzle';
 
 export default class App extends React.Component {
@@ -14,10 +12,6 @@ export default class App extends React.Component {
     this.changePuzzle = this.changePuzzle.bind(this);
   }
 
-  componentDidMount() {
-    createGraph(puzzles[0]);
-  }
-
   changePuzzle(index) {
     this.setState({
       puzzleIndex: index,
@@ -27,7 +21,12 @@ export default class App extends React.Component {
   render() {
     const { puzzleIndex } = this.state;
     return (
-      <Puzzle puzzleIndex={puzzleIndex} />
+      <>
+        <Puzzle puzzleIndex={puzzleIndex} />
+        <button type="button" onClick={() => this.changePuzzle(0)}>Puzzle 1</button>
+        <button type="button" onClick={() => this.changePuzzle(1)}>Puzzle 2</button>
+        <button type="button" onClick={() => this.changePuzzle(2)}>Puzzle 3</button>
+      </>
     );
   }
 }

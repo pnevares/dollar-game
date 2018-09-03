@@ -6,12 +6,21 @@ import puzzles from './puzzles';
 export default class Puzzle extends React.Component {
   componentDidMount() {
     const { puzzleIndex } = this.props;
-    createGraph(puzzles[puzzleIndex]);
+    this.graph = createGraph(puzzles[puzzleIndex]);
+  }
+
+  componentDidUpdate(prevProps) {
+    const { puzzleIndex } = this.props;
+    if (puzzleIndex !== prevProps.puzzleIndex) {
+      this.graph.kill();
+      this.graph = createGraph(puzzles[puzzleIndex]);
+    }
   }
 
   render() {
+    const { puzzleIndex } = this.props;
     return (
-      <div id="container" />
+      <div id="container" puzzle={puzzleIndex} />
     );
   }
 }
