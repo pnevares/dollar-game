@@ -2,7 +2,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import puzzles from './puzzles';
+import puzzles from '../puzzles';
 
 const Buttons = ({ clickHandler }) => (
   <p>

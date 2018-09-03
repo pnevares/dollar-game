@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import createGraph from './create-graph';
-import puzzles from './puzzles';
+import createGraph from '../create-graph';
+import puzzles from '../puzzles';
 
 export default class Puzzle extends React.Component {
   componentDidMount() {

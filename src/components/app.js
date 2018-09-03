@@ -14,9 +14,9 @@ export default class App extends React.Component {
     this.changePuzzle = this.changePuzzle.bind(this);
   }
 
-  changePuzzle(index) {
+  changePuzzle(puzzleIndex) {
     this.setState({
-      puzzleIndex: index,
+      puzzleIndex,
     });
   }
 

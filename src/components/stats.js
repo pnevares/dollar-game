@@ -2,8 +2,8 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import puzzles from './puzzles';
-import calculateStats from './calculate-stats';
+import puzzles from '../puzzles';
+import calculateStats from '../calculate-stats';
 
 const Stats = ({ puzzleIndex }) => {
   const puzzle = typeof puzzles[puzzleIndex] === 'function'
