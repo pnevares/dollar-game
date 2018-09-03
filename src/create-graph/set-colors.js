@@ -19,8 +19,8 @@ export default function setColors(s) {
   });
 
   if (reds === 0) {
-    document.getElementById('container').appendChild(
-      document.createTextNode(HOORAY),
-    );
+    s.graph.nodes().forEach((node) => {
+      s.graph.updateNode(node.id, { label: node.label + HOORAY });
+    });
   }
 }
