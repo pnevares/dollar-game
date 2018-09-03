@@ -1,5 +1,6 @@
 import Sigma from 'sigma';
-import puzzles from './puzzles';
+import bindHandlers from './bind-handlers';
+import setColors from './set-colors';
 
 // custom method(s)
 Sigma.classes.graph.addMethod('getAllNeighbors', function getAllNeighbors(id) {
@@ -18,7 +19,7 @@ Sigma.classes.graph.addMethod('updateEdge', function updateEdge(id, patch) {
   return true;
 });
 
-export default function createGraph() {
+export default function createGraph(puzzle) {
   const s = new Sigma({
     container: 'root',
   });
@@ -37,7 +38,11 @@ export default function createGraph() {
     defaultEdgeColor: '#ccc',
   });
 
-  s.graph.read(puzzles[2]);
+  s.graph.read(puzzle);
+
+  bindHandlers(s);
+  setColors(s);
+  s.refresh();
 
   return s;
 }
