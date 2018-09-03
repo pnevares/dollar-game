@@ -13,11 +13,11 @@ const Stats = ({ puzzleIndex }) => {
   return (
     <>
       <p>
-        Dollars on the board:
+        Dollars on this graph:
         {dollars}
       </p>
       <p>
-        Genus of the graph:
+        Genus of this graph:
         {genus}
       </p>
     </>

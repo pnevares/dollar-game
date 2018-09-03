@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 import puzzles from './puzzles';
 
 const Buttons = ({ clickHandler }) => (
-  <>
-    Puzzles:
+  <p>
+    Puzzle select:
     {puzzles.map((v, i) => (
       <button
         type="button"
@@ -16,7 +16,7 @@ const Buttons = ({ clickHandler }) => (
         {i}
       </button>
     ))}
-  </>
+  </p>
 );
 
 Buttons.propTypes = {

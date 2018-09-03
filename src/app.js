@@ -25,8 +25,8 @@ export default class App extends React.Component {
     return (
       <>
         <Puzzle puzzleIndex={puzzleIndex} />
-        <Buttons clickHandler={this.changePuzzle} />
         <Stats puzzleIndex={puzzleIndex} />
+        <Buttons clickHandler={this.changePuzzle} />
       </>
     );
   }
