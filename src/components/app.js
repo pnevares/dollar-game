@@ -8,7 +8,7 @@ export default class App extends React.Component {
     super();
 
     this.state = {
-      puzzleIndex: 0,
+      puzzleIndex: 'puzzle1',
     };
 
     this.changePuzzle = this.changePuzzle.bind(this);

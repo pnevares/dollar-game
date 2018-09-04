@@ -35,5 +35,5 @@ export default class Puzzle extends React.Component {
 }
 
 Puzzle.propTypes = {
-  puzzleIndex: PropTypes.number.isRequired,
+  puzzleIndex: PropTypes.string.isRequired,
 };

@@ -7,13 +7,13 @@ import puzzles from '../puzzles';
 const Buttons = ({ clickHandler }) => (
   <p>
     Puzzle select:
-    {puzzles.map((v, i) => (
+    {Object.keys(puzzles).map(v => (
       <button
         type="button"
-        key={i}
-        onClick={() => clickHandler(i)}
+        key={v}
+        onClick={() => clickHandler(v)}
       >
-        {i}
+        {v}
       </button>
     ))}
   </p>

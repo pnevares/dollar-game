@@ -27,7 +27,7 @@ const Stats = ({ puzzleIndex }) => {
 };
 
 Stats.propTypes = {
-  puzzleIndex: PropTypes.number.isRequired,
+  puzzleIndex: PropTypes.string.isRequired,
 };
 
 export default Stats;
