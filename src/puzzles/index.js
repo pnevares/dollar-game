@@ -1,13 +1,13 @@
-import puzzle1 from './puzzle1';
-import puzzle2 from './puzzle2';
-import puzzle3 from './puzzle3';
-import puzzle4 from './puzzle4';
+import numberphile1 from './numberphile1';
+import numberphile2 from './numberphile2';
+import easy1 from './easy1';
+import easy2 from './easy2';
 import random from './random';
 
 export default {
-  puzzle1,
-  puzzle2,
-  puzzle3,
-  puzzle4,
+  numberphile1,
+  numberphile2,
+  easy1,
+  easy2,
   random,
 };
