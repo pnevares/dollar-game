@@ -4,7 +4,10 @@
   "description": "Distribute the cash until everyone is out of debt.",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server",
+    "build": "webpack",
+    "dev": "webpack-dev-server",
+    "prestart": "npm run build",
+    "start": "node server.js",
     "test": "eslint ."
   },
   "repository": {
@@ -24,6 +27,7 @@
   },
   "homepage": "https://github.com/pnevares/dollar-game",
   "dependencies": {
+    "express": "^4.16.3",
     "prop-types": "^15.6.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
