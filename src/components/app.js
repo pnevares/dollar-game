@@ -1,5 +1,6 @@
 import React from 'react';
 import Buttons from './buttons';
+import Instructions from './instructions';
 import Puzzle from './puzzle';
 import Stats from './stats';
 
@@ -24,6 +25,7 @@ export default class App extends React.Component {
     const { puzzleIndex } = this.state;
     return (
       <>
+        <Instructions />
         <Puzzle puzzleIndex={puzzleIndex} />
         <Stats puzzleIndex={puzzleIndex} />
         <Buttons clickHandler={this.changePuzzle} />
