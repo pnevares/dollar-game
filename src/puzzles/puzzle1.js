@@ -10,14 +10,14 @@ const nodes = [
     id: 'n1',
     label: '-1',
     x: 0,
-    y: 1,
+    y: 0.8,
     size: 1,
   },
   {
     id: 'n2',
     label: '-2',
     x: 2,
-    y: 1,
+    y: 0.8,
     size: 1,
   },
   {
