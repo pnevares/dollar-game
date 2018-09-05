@@ -14,6 +14,7 @@ export default function createGraph(puzzle) {
   s.settings({
     doubleClickEnabled: false,
     mouseWheelEnabled: false,
+    autoResize: false,
 
     sideMargin: 0.3,
     maxEdgeSize: 4,
