@@ -1,8 +1,8 @@
 import React from 'react';
-import Buttons from './buttons';
-import Instructions from './instructions';
-import Puzzle from './puzzle';
-import Stats from './stats';
+import Buttons from './Buttons';
+import Instructions from './Instructions';
+import Puzzle from './Puzzle';
+import Stats from './Stats';
 
 export default class App extends React.Component {
   constructor() {
