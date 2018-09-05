@@ -1,34 +1,28 @@
 import React from 'react';
-import Buttons from './Buttons';
-import Instructions from './Instructions';
-import Puzzle from './Puzzle';
-import Stats from './Stats';
+import Premade from './Premade';
+import Builder from './Builder';
 
 export default class App extends React.Component {
   constructor() {
     super();
 
     this.state = {
-      puzzleIndex: 'numberphile1',
+      ui: 'premade',
     };
 
-    this.changePuzzle = this.changePuzzle.bind(this);
+    this.changeUI = this.changeUI.bind(this);
   }
 
-  changePuzzle(puzzleIndex) {
-    this.setState({
-      puzzleIndex,
-    });
+  changeUI(ui) {
+    this.setState({ ui });
   }
 
   render() {
-    const { puzzleIndex } = this.state;
+    const { ui } = this.state;
     return (
       <>
-        <Instructions />
-        <Puzzle puzzleIndex={puzzleIndex} />
-        <Stats puzzleIndex={puzzleIndex} />
-        <Buttons clickHandler={this.changePuzzle} />
+        {ui === 'premade' && <Premade changeUIHandler={this.changeUI} />}
+        {ui === 'builder' && <Builder changeUIHandler={this.changeUI} />}
       </>
     );
   }

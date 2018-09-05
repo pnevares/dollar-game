@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import puzzles from '../puzzles';
 
-const Buttons = ({ clickHandler }) => (
+const Buttons = ({ clickHandler, changeUIHandler }) => (
   <>
     <p>
       <button
         type="button"
         key="build-your-own"
-        onClick={() => console.log('build-your-own')}
+        onClick={() => changeUIHandler('builder')}
       >
         build-your-own
       </button>
@@ -30,6 +30,7 @@ const Buttons = ({ clickHandler }) => (
 
 Buttons.propTypes = {
   clickHandler: PropTypes.func.isRequired,
+  changeUIHandler: PropTypes.func.isRequired,
 };
 
 export default Buttons;

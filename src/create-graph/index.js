@@ -1,29 +1,10 @@
 import Sigma from 'sigma';
+import customSigmaMethods from './custom-sigma-methods';
 import bindHandlers from './bind-handlers';
 import updateGraph from './update-graph';
 import { CONTAINER } from '../constants';
 
-// custom method(s)
-Sigma.classes.graph.addMethod('getAllNeighbors', function getAllNeighbors(id) {
-  return Object.keys(this.allNeighborsIndex[id]);
-});
-Sigma.classes.graph.addMethod('updateNode', function updateNode(id, patch) {
-  Object.entries(patch).forEach(([key, value]) => {
-    this.nodesIndex[id][key] = value;
-  });
-  return true;
-});
-Sigma.classes.graph.addMethod('updateEdge', function updateEdge(id, patch) {
-  Object.entries(patch).forEach(([key, value]) => {
-    this.edgesIndex[id][key] = value;
-  });
-  return true;
-});
-Sigma.classes.graph.addMethod('destroy', function destroy() {
-  document.getElementById(CONTAINER).innerHTML = '';
-  this.kill();
-  return true;
-});
+customSigmaMethods();
 
 export default function createGraph(puzzle) {
   const s = new Sigma({
@@ -44,7 +25,9 @@ export default function createGraph(puzzle) {
     defaultEdgeColor: '#ccc',
   });
 
-  s.graph.read(puzzle);
+  if (puzzle) {
+    s.graph.read(puzzle);
+  }
 
   bindHandlers(s);
   updateGraph(s);

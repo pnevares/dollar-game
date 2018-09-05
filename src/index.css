@@ -6,6 +6,7 @@ body {
   margin: 0 auto;
   width: 640px;
   height: 480px;
+  border: 1px solid #ccc;
 }
 
 #root {
@@ -19,4 +20,9 @@ p {
 
 button {
   margin: 5px;
+}
+
+textarea {
+  width: 400px;
+  height: 150px;
 }
