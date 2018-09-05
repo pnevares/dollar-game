@@ -12,17 +12,15 @@ export default function bindHandlers(s) {
     switch (s.mode) {
       case BUILDER_MODE:
         s.graph.updateNode(id, { label: '-2' });
-        s.refresh();
         break;
-      case PLAY_MODE: {
+      case PLAY_MODE:
         distribute(s, id, take);
         updateGraph(s);
-        s.refresh();
         break;
-      }
       default:
         break;
     }
+    s.refresh();
   });
 
   s.bind('overNode', (data) => {
