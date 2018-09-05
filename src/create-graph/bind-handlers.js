@@ -1,5 +1,6 @@
 import distribute from './distribute';
 import updateGraph from './update-graph';
+import { BUILDER_MODE, PLAY_MODE } from '../constants';
 
 export default function bindHandlers(s) {
   s.bind('clickNode', (data) => {
@@ -8,10 +9,20 @@ export default function bindHandlers(s) {
       node: { id },
     } = data.data;
 
-    distribute(s, id, take);
-
-    updateGraph(s);
-    s.refresh();
+    switch (s.mode) {
+      case BUILDER_MODE:
+        s.graph.updateNode(id, { label: '-2' });
+        s.refresh();
+        break;
+      case PLAY_MODE: {
+        distribute(s, id, take);
+        updateGraph(s);
+        s.refresh();
+        break;
+      }
+      default:
+        break;
+    }
   });
 
   s.bind('overNode', (data) => {

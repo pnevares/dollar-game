@@ -2,7 +2,12 @@ import Sigma from 'sigma';
 import customSigmaMethods from './custom-sigma-methods';
 import bindHandlers from './bind-handlers';
 import updateGraph from './update-graph';
-import { CONTAINER } from '../constants';
+import {
+  BUILDER_MODE,
+  CONTAINER,
+  DEFAULT_EDGE_COLOR,
+  PLAY_MODE,
+} from '../constants';
 
 customSigmaMethods();
 
@@ -23,11 +28,24 @@ export default function createGraph(puzzle) {
     defaultLabelSize: 30,
     labelColor: 'node',
     edgeColor: 'default',
-    defaultEdgeColor: '#ccc',
+    defaultEdgeColor: DEFAULT_EDGE_COLOR,
   });
 
   if (puzzle) {
+    s.mode = PLAY_MODE;
     s.graph.read(puzzle);
+  } else {
+    s.graph.read({
+      nodes: [{
+        id: 'n0',
+        label: '-1',
+        x: 0,
+        y: 0,
+        size: 1,
+      }],
+      edges: [],
+    });
+    s.mode = BUILDER_MODE;
   }
 
   bindHandlers(s);
